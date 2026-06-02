@@ -315,9 +315,8 @@
         .phone-app-img {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Permet à l'image de bien s'adapter à l'écran */
+            object-fit: cover;
         }
-
 
         /* --- SECTION SHOP PRINCIPAL --- */
         .eshop {
@@ -483,10 +482,143 @@
             100% { transform: translate(-50%, -50%) translateY(0px); }
         }
 
+        /* --- ADAPTATION MOBILE COMPLÈTE (CORRECTIONS) --- */
         @media (max-width: 900px) {
-            .hero, .eshop-container, .app-showcase { flex-direction: column; text-align: center; }
-            .grid-features, .grid-refills { grid-template-columns: 1fr; }
-            .swatches { justify-content: center; }
+            header {
+                flex-direction: column;
+                gap: 15px;
+                padding: 15px;
+                margin: 10px;
+                text-align: center;
+            }
+            
+            nav {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                margin-bottom: 5px;
+            }
+
+            nav a {
+                margin: 0;
+                font-size: 1.1rem;
+            }
+
+            .hero {
+                flex-direction: column-reverse; /* Met l'image au-dessus du texte sur mobile, plus moderne */
+                text-align: center;
+                padding: 30px 20px;
+                margin: 10px auto;
+                gap: 30px;
+            }
+
+            .hero-text h1 {
+                font-size: 2.3rem;
+            }
+
+            .hero-text p {
+                font-size: 1rem;
+            }
+
+            .hero-image-container {
+                width: 100%;
+                min-height: 280px;
+            }
+
+            .water-orb {
+                width: 250px;
+                height: 250px;
+            }
+
+            .product-mockup {
+                max-width: 160px;
+            }
+
+            .reveal-section {
+                padding: 20px;
+                margin: 40px auto;
+            }
+
+            .reveal-section h2 {
+                font-size: 1.8rem;
+                margin-bottom: 25px;
+            }
+
+            .grid-features {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .app-showcase {
+                flex-direction: column;
+                text-align: center;
+                padding: 40px 20px;
+                margin: 40px 15px;
+                gap: 40px;
+            }
+
+            .app-text h2 {
+                font-size: 1.8rem;
+            }
+
+            .app-features-list li {
+                text-align: left;
+                font-size: 1rem;
+            }
+
+            .eshop {
+                padding: 40px 20px;
+                margin: 40px 15px;
+            }
+
+            .eshop-container {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .product-display {
+                min-height: auto;
+                width: 100%;
+            }
+
+            #dynamic-stick {
+                max-width: 160px;
+            }
+
+            .product-details h2 {
+                font-size: 2rem;
+                text-align: center;
+            }
+
+            .price {
+                font-size: 1.8rem;
+                text-align: center;
+            }
+
+            .swatches {
+                justify-content: center;
+            }
+
+            .refills-section {
+                padding: 20px;
+                margin: 40px auto;
+            }
+
+            .refills-section h2 {
+                font-size: 1.8rem;
+            }
+
+            .grid-refills {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .reassurance {
+                flex-direction: column;
+                gap: 30px;
+                margin: 40px 15px;
+                padding: 20px;
+            }
         }
     </style>
 </head>
@@ -495,7 +627,6 @@
     <!-- NAV BAR -->
     <header class="glass-panel">
         <div class="logo-container">
-            <!-- LIGNE DU LOGO (Remplace l'image ici si besoin) -->
             <img src="Gemini_Generated_Image_efwn8wefwn8wefwn-removebg-preview (1)_2.png" alt="Logo StickSafe" class="logo-img">
             <div class="logo-text">StickSafe</div>
         </div>
@@ -542,7 +673,7 @@
         </div>
     </section>
 
-    <!-- APPLICATION MOBILE (AVEC LE SMARTPHONE INTEGRÉ) -->
+    <!-- APPLICATION MOBILE -->
     <section class="app-showcase glass-panel">
         <div class="app-text">
             <h2>Une application intelligente liée à votre Lipstick</h2>
@@ -554,12 +685,11 @@
             </ul>
         </div>
         
-        <!-- LE SMARTPHONE POUR VOS IMAGES APP -->
+        <!-- LE SMARTPHONE -->
         <div class="phone-container">
             <div class="phone-mockup">
                 <div class="phone-island"></div>
                 <div class="phone-screen">
-                    <!-- LIGNE POUR INSERER L'IMAGE DE TON APPLI MOBILE -->
                     <img src="maquette-app.png" alt="Interface Application StickSafe" class="phone-app-img">
                 </div>
             </div>
@@ -575,10 +705,10 @@
             <div class="product-details">
                 <h2 id="product-title">StickSafe Rose Pastel</h2>
                 <div class="price">49,99€</div>
-                <p style="color: #666; margin-bottom: 25px; line-height: 1.5;">Rechargeable en USB-C. Coque hermétique premium en aluminium brossé ultra-discrète.</p>
+                <p style="color: #666; margin-bottom: 25px; line-height: 1.5; text-align: center;">Rechargeable en USB-C. Coque hermétique premium en aluminium brossé ultra-discrète.</p>
                 
                 <div class="color-selector">
-                    <p>Choisir votre teinte de stick :</p>
+                    <p style="text-align: center;">Choisir votre teinte de stick :</p>
                     <div class="swatches">
                         <div class="swatch rose active" onclick="changeColor('rose', 'Rose Pastel', 'stick-rose.png')"></div>
                         <div class="swatch jaune" onclick="changeColor('jaune', 'Jaune Pastel', 'stick-jaune.png.png')"></div>
@@ -594,7 +724,7 @@
     <!-- SECTION RECHARGES DE TEINTES -->
     <section class="refills-section">
         <h2>Vos Teintes de Rechange</h2>
-        <p style="color: #666; margin-bottom: 40px; margin-top: -20px;">Ne tombez jamais à court de style. Nos recharges s'enclipsent en 2 secondes chrono.</p>
+        <p style="color: #666; margin-bottom: 40px; margin-top: -10px;">Ne tombez jamais à court de style. Nos recharges s'enclipsent en 2 secondes chrono.</p>
         
         <div class="grid-refills">
             <!-- Recharge Rose -->
